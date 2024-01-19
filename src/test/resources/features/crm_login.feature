@@ -1,4 +1,4 @@
 @wip
 Feature: first test
-  Scenario: Scenerio
+  Scenario: Scenario
     Given  user land on website
