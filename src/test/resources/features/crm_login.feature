@@ -1,4 +1,4 @@
 @wip
 Feature: first test
-  Scenario: firstUydurukIsim
+  Scenario: Scenario
     Given  user land on website
