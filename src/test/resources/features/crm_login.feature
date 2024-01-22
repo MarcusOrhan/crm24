@@ -7,7 +7,7 @@ Feature: Login Page
     Then user validate "Incorrect login or password"
     Examples:
     |userName|password|
-    |helpdesk1@cydeo.com|Hello|
-    |Helpdesk1@cydeo.com|UserUser|
-    |Helpdesk1@cydeo.com|userUser|
-    |                   |        |
+    |helpdesk1@cydeo.com |Hello    |
+    |melpdesk1@cydeo.com |UserUser |
+    |gelpdesk1@cydeo.com |usersUser|
+    |                    |        |
