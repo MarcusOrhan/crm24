@@ -27,6 +27,40 @@ public class LoginPage {
         this.loginButton.click();
     }
 
+    @FindBy(id = "")
+    public WebElement outPut;
+
+
+
+    // Mustafa
+    @FindBy(css = "input[placeholder='Login']")
+    public WebElement loginName;
+
+
+//Forgat password active and ve yazisi
+    @FindBy(css = ".log-popup-header")
+    public WebElement authorizationText;
+
+    @FindBy(xpath = "//a[@class='login-link-forgot-pass']")
+    public WebElement forgotPasswordLinkText;
+
+
+    @FindBy(css = "div[class='log-popup-header']")
+    public WebElement getPasswordText;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void login(String username, String password) {
         this.username.sendKeys(username);
         this.password.sendKeys(password);
