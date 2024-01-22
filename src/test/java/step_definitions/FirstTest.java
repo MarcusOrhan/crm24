@@ -15,6 +15,16 @@ public class FirstTest {
     public void user_land_on_website() {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+
+
+//        Assert.assertEquals(loginPage.authorizationText.getText(), "Authorization" ); // validate the Authorization text
+
+//        Assert.assertTrue(loginPage.forgotPasswordLinkText.isDisplayed() );  // Verify forgot link text
+//
+//        loginPage.forgotPasswordLinkText.click();
+//
+//        Assert.assertTrue(loginPage.getPasswordText.isDisplayed() );
+
     }
 
     @When("user enter {string} and {string}")
