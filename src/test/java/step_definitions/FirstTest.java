@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import pages.BasePage;
 import pages.LoginPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -35,13 +36,27 @@ public class FirstTest {
     }
 
     @And("user click {string}")
-    public void userClick(String value) {
+    public void userClick(String value)  {
     loginpage.click(value);
+    //Driver.closeDriver();
 
     }
 
     @Then("user validate {string}")
     public void userValidate(String warning) {
         Assert.assertEquals(warning,loginpage.warningMessage.getText());
+    }
+
+    @When("user enter correct credentials")
+    public void userEnterCorrectCredentials() {
+        loginpage.login();
+    }
+
+    @Then("user validate checkbox is selected")
+    public void checkboxSelected() {
+        boolean selected = loginpage.checkBox.isSelected();
+        Assert.assertTrue(selected);
+
+
     }
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class LoginPage {
@@ -22,15 +23,10 @@ public class LoginPage {
     public WebElement warningMessage;
 
     public void login() {
-        this.username.sendKeys("helpdesk1@cydeo.com");
-        this.password.sendKeys("UserUser");
-        this.loginButton.click();
+        this.username.sendKeys(ConfigurationReader.getProperty("username"));
+        this.password.sendKeys(ConfigurationReader.getProperty("password"));
+        //this.loginButton.click();
     }
-
-    @FindBy(id = "")
-    public WebElement outPut;
-
-
 
     // Mustafa
     @FindBy(css = "input[placeholder='Login']")
@@ -47,19 +43,8 @@ public class LoginPage {
 
     @FindBy(css = "div[class='log-popup-header']")
     public WebElement getPasswordText;
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(id = "USER_REMEMBER")
+    public WebElement checkBox;
 
     public void login(String username, String password) {
         this.username.sendKeys(username);
@@ -73,11 +58,14 @@ public class LoginPage {
             case "Login":
                 loginButton.click();
                 break;
-            case " Forgot Password":
-
+            case "Forgot Password":
+                forgotPasswordLinkText.click();
                 break;
             case "Authorization":
 
+                break;
+            case "checkBox":
+                checkBox.click();
                 break;
             //optional
             default:
